@@ -22,7 +22,9 @@ module.exports = {
   },
   remove(req, res) {
     const { id } = req.params;
+    console.log(id)
     budgetData.purchases = budgetData.purchases.filter(purchase => purchase.id !== parseInt(id))
+    console.log(budgetData.purchases)
     setTimeout(() => res.send(budgetData.purchases), timer)
   }
 }
